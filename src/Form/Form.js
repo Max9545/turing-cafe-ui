@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { fetchReservations } from '../apiCalls'
 import './Form.css'
 
 class Form extends Component {
@@ -34,13 +35,13 @@ class Form extends Component {
     })
     .then(response => response.json())
     .then(data => {
+      this.props.updateAppState()
       console.log('Success:', data);
     })
-    // .catch((error) => {
-    //   console.error('Error:', error);
-    // });
-    
-
+    .catch((error) => {
+      console.error('Error:', error);
+    });
+   
   }
 
   render() {
