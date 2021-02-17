@@ -53,6 +53,7 @@ class Form extends Component {
         aria-label='name-field'
         type='text'
         name='name'
+        className='name-field'
         value={this.state.name}
         onChange={this.handleChange}
         />
@@ -63,6 +64,7 @@ class Form extends Component {
         aria-label='date-field'
         type='text'
         name='date'
+        className='date-field'
         value={this.state.date}
         onChange={this.handleChange}
         />
@@ -73,6 +75,7 @@ class Form extends Component {
         aria-label='time-field'
         type='text'
         name='time'
+        className='time-field'
         value={this.state.time}
         onChange={this.handleChange}
         />
@@ -83,11 +86,12 @@ class Form extends Component {
         aria-label='number-field'
         type='text'
         name='number'
+        className='number-field'
         value={this.state.number}
         onChange={this.handleChange}
         />
       </label>
-      <button>Make Reservation</button>
+      <button className='make-reservation-button'>Make Reservation</button>
     </form>)
   }
 }
