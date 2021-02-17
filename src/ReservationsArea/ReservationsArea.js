@@ -2,7 +2,7 @@ import React from 'react'
 import './ReservationsArea.css'
 import Reservation from '../Reservation/Reservation'
 
-const ReservationsArea = ({ reservations }) => {
+const ReservationsArea = ({ reservations, cancelReservation }) => {
 
 
   console.log(reservations)
@@ -15,6 +15,7 @@ const ReservationsArea = ({ reservations }) => {
       name={reservation.name}
       number={reservation.number}
       time={reservation.time}
+      cancelReservation={cancelReservation}
       />
     )
   })
