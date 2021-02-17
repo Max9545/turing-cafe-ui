@@ -1,5 +1,5 @@
 import React from 'react'
-// import '/.ReservationsArea.css'
+import './ReservationsArea.css'
 import Reservation from '../Reservation/Reservation'
 
 const ReservationsArea = ({ reservations }) => {
@@ -20,9 +20,9 @@ const ReservationsArea = ({ reservations }) => {
   })
 
   return(
-    <>
+    <div className='res-area'>
     {reservationsToShow}
-    </>
+    </div>
   )
 
 
