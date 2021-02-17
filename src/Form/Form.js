@@ -18,9 +18,34 @@ class Form extends Component {
     })
   }
 
+  handleSubmit = (event) => {
+    event.preventDefault()
+    fetch('http://localhost:3001/api/v1/reservations', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        name:this.state.name, 
+        date: this.state.date, 
+        time: this.state.time, 
+        number: this.state.number}
+        )
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Success:', data);
+    })
+    // .catch((error) => {
+    //   console.error('Error:', error);
+    // });
+    
+
+  }
+
   render() {
     return(
-    <form>
+    <form className='make-res-form' id='make-res-form' onSubmit={this.handleSubmit}>
       <label>
         GuestName
         <input
@@ -61,6 +86,7 @@ class Form extends Component {
         onChange={this.handleChange}
         />
       </label>
+      <button>Make Reservation</button>
     </form>)
   }
 }
