@@ -16,16 +16,12 @@ describe('Reservations HomePage', () => {
   })
   it('Should be able to make a reservaiton that is then displayed on the page', () => {
     cy
-    .get('.name-field')
-    .type('Max B')
-    .get('.date-field')
-    .type('11/7')
-    .get('.time-field')
-    .type('6:00')
-    .get('.number-field')
-    .type('4')
+    .get('.name-field').type('Max B')
+    .get('.date-field').type('11/7')
+    .get('.time-field').type('6:00')
+    .get('.number-field').type('4')
     .get('.make-reservation-button').click()
-    .get('.res-card').last
+    .get('.res-card').last()
     .get('.res-name').contains('Max B')
     .get('.res-date-and-time').contains('11/7 at 6:00')
     .get('.res-number-of-guests').contains('4')
